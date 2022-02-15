@@ -33,6 +33,7 @@ int main( int   argc,
     GtkWidget *vbox, *hbox;
     GtkWidget *button;
     GtkWidget *check;
+    GdkColor color;
     gint tmp_pos;
 	argsvvv=&argsvv[0];
     gtk_init (&argc, &argv);
@@ -43,6 +44,7 @@ int main( int   argc,
 	}
     /* create a new window */
     window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+    gdk_color_parse ("#1010FF", &color);
     gtk_widget_set_size_request (GTK_WIDGET (window), 600, 100);
     gtk_window_set_title (GTK_WINDOW (window), "run arguments");
     g_signal_connect (window, "destroy",
@@ -92,7 +94,8 @@ int main( int   argc,
     gtk_widget_show (button);
     
     gtk_widget_show (window);
-
+    //---------------
+	gtk_widget_modify_bg ( GTK_WIDGET(window), GTK_STATE_NORMAL, &color);
     gtk_main();
 
     return 0;
