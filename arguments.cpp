@@ -96,6 +96,10 @@ int main( int   argc,
     gtk_widget_show (window);
     //---------------
 	gtk_widget_modify_bg ( GTK_WIDGET(window), GTK_STATE_NORMAL, &color);
+	gtk_widget_modify_bg ( GTK_WIDGET(button), GTK_STATE_NORMAL, &color);
+	gtk_widget_modify_bg ( GTK_WIDGET(entry), GTK_STATE_NORMAL, &color);
+	gtk_widget_modify_bg ( GTK_WIDGET(entry2), GTK_STATE_NORMAL, &color);
+    gtk_widget_modify_bg ( GTK_WIDGET(vbox), GTK_STATE_NORMAL, &color);
     gtk_main();
 
     return 0;
